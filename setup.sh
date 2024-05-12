@@ -14,4 +14,4 @@ kubectl apply -f  git-clone.yaml
 
 #Install kaniko from hub
 
-kubectl apply -f  kaniko.yaml
+kubectl apply -f  kaniko.yml
