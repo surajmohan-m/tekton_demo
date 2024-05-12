@@ -21,4 +21,4 @@ spec:
   - name: repo-url
     value: https://github.com/surajmohan-m/webapp.git
   - name: image-reference
-    value: https://hub.docker.com/repositories/surajmohanm/tekton_test_webapp:version
+    value: hub.docker.com/repositories/surajmohanm/tekton_test_webapp:version
