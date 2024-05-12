@@ -3,6 +3,9 @@ kind: Pipeline
 metadata:
   name: my-pipeline
 spec:
+  workspaces:
+  - name: shared-data
+    description: "test ws"
   params:
   - name: repo-url
     type: string
@@ -17,7 +20,13 @@ spec:
         value: $(params.repo-url)
       - name: revision
         value: $(params.revision)
+    workspaces:
+      - name: output
+        workspace: shared-data
   - name: list-source
     runAfter: ["fetch-source"]
     taskRef:
       name: list-source
+    workspaces:
+      - name: source
+        workspace: shared-data
