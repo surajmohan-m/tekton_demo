@@ -16,10 +16,16 @@ kubectl apply -f  git-clone.yml
 kubectl apply -f  kaniko.yml
 
 #install task source list
-kubectl apply -f task_source_list.yml
+#kubectl apply -f task_source_list.yml
 
 #install pipeline
-kubectl apply -f pipeline.yml
+#kubectl apply -f pipeline.yml
 
 #create pipeline run
-kubectl create -f pipeline_Run.yml
+#kubectl create -f pipeline_Run.yml
+
+#install pipeline
+kubectl apply -f pipeline_clone-build-push.yml
+
+#install pipelinerun
+kubectl create -f pipelinerun-clone-build-push.yml
