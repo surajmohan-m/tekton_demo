@@ -25,7 +25,7 @@ kubectl apply -f  kaniko.yml
 #kubectl create -f pipeline_Run.yml
 
 #create docker credentials
-kubectl apply -f docker-dredentials.yml
+kubectl apply -f docker-credentials.yml
 
 #install pipeline
 kubectl apply -f pipeline_clone-build-push.yml
