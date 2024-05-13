@@ -17,9 +17,6 @@ spec:
         resources:
           requests:
             storage: 1Gi
-  - name: docker-credentials
-    secret:
-      secretName: docker-credentials
   params:
   - name: repo-url
     value: https://github.com/surajmohan-m/webapp.git
