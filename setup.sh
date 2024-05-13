@@ -27,14 +27,20 @@ kubectl apply -f  kaniko.yml
 #create docker credentials
 kubectl apply -f docker-credentials.yml
 
+#install pipeline
+kubectl apply -f pipeline_clone-build-push.yml
+
+#install pipelinerun
+kubectl create -f pipelinerun-clone-build-push.yml
+
+################################
+## Create deployment and service
+################################
+
+
 #create deployment of webapp
 kubectl apply -f deployment_webapp.yml
 
 #k8s webapp service
 kubectl expose deployment/webapp-deployment --type="NodePort" --port 8080
 
-#install pipeline
-kubectl apply -f pipeline_clone-build-push.yml
-
-#install pipelinerun
-kubectl create -f pipelinerun-clone-build-push.yml
