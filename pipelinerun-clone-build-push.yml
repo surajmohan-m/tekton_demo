@@ -6,6 +6,9 @@ spec:
   pipelineRef:
     name: clone-build-push
   workspaces:
+  - name: docker-credentials
+    secret:
+      secretName: docker-credentials
   - name: shared-data
     volumeClaimTemplate:
       spec:
