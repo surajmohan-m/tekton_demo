@@ -27,6 +27,9 @@ kubectl apply -f  kaniko.yml
 #create docker credentials
 kubectl apply -f docker-credentials.yml
 
+#install local registry
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
 #install pipeline
 kubectl apply -f pipeline_clone-build-push.yml
 
