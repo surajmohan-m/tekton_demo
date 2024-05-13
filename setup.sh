@@ -27,8 +27,10 @@ kubectl apply -f  kaniko.yml
 #create docker credentials
 kubectl apply -f docker-credentials.yml
 
+#create deployment of webapp
+kubectl apply -f deployment_webapp.yml
 
-#k8s service
+#k8s webapp service
 kubectl expose deployment/webapp-deployment --type="NodePort" --port 8080
 
 #install pipeline
