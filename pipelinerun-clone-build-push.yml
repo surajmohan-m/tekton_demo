@@ -24,4 +24,4 @@ spec:
   - name: repo-url
     value: https://github.com/surajmohan-m/webapp.git
   - name: image-reference
-    value: hub.docker.com/repository/docker/surajmohanm/tekton_test_webapp:latest
+    value: localhost:5000/webapp
