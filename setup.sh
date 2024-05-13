@@ -42,5 +42,5 @@ kubectl create -f pipelinerun-clone-build-push.yml
 kubectl apply -f deployment_webapp.yml
 
 #k8s webapp service
-kubectl expose deployment/webapp-deployment --type="NodePort" --port 8080
+kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
 
