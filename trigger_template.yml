@@ -1,0 +1,41 @@
+apiVersion: triggers.tekton.dev/v1
+kind: TriggerTemplate
+metadata:
+  name: trigger-demo-template
+  annotations:
+    triggers.tekton.dev/old-escape-quotes: "true"
+spec:
+  params:
+    - name: commits
+      description: The commits which got pushed
+    - name: gitRepository
+      description: The git repository that hosts context
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1
+      kind: PipelineRun
+      metadata:
+        generateName: clone-build-push-run-
+        annotations:
+          tekton.dev/gitURL: "$(tt.params.gitRepository)"
+      spec:
+        pipelineRef:
+          name: clone-build-push
+        workspaces:
+        - name: docker-credentials
+          secret:
+            secretName: docker-credentials
+        - name: shared-data
+          volumeClaimTemplate:
+            spec:
+              accessModes:
+              - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 1Gi
+        params:
+        - name: commits
+          value: "$(tt.params.commits)"
+        - name: repo-url
+          value: "$(tt.params.gitRepository)"
+        - name: image-reference
+          value: docker.io/surajmohanm/webapp-tekton
