@@ -29,12 +29,29 @@ kubectl apply -f  kaniko.yml
 #create docker credentials
 kubectl apply -f docker-credentials.yml
 
-#install pipeline
+#create pipeline
 kubectl apply -f pipeline_clone-build-push.yml
 
-#install pipelinerun
-kubectl create -f pipelinerun-clone-build-push.yml
+#create pipelinerun
+#kubectl create -f pipelinerun-clone-build-push.yml
 
+#Create tekton webhook token
+kubectl apply -f webhook_secret.yml
+
+#Create trigger template
+kubectl apply -f trigger_template.yml
+
+#Create trigger binding
+kubectl apply -f trigger_binding.yml
+
+#Create trigger
+kubectl apply -f trigger.yml
+
+#Create event listner
+kubectl apply -f event_listner.yml
+
+#Create event listner ingress
+kubectl apply -f trigger_ingress.yml
 ################################
 ## Create deployment and service
 ################################
