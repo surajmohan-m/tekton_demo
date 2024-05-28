@@ -60,6 +60,9 @@ kubectl apply -f trigger_ingress.yml
 #create deployment of webapp
 kubectl apply -f deployment_webapp.yml
 
+#rollout new image
+kubectl rollout  restart deployment webapp-deployment
+
 #k8s webapp service
 kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
 
