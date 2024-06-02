@@ -35,7 +35,7 @@ spec:
         params:
         - name: commits
           value: "$(tt.params.commits)"
-        - name: repo-url
+        - name: gitRepository
           value: "$(tt.params.gitRepository)"
         - name: image-reference
           value: docker.io/surajmohanm/webapp-tekton
