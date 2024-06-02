@@ -7,4 +7,4 @@ spec:
     - name: gitRepository
       value: $(body.repository.html_url)
     - name: commits
-      value: $(body.commits)
+      value: $(body.commits_url)
