@@ -6,8 +6,6 @@ metadata:
     triggers.tekton.dev/old-escape-quotes: "true"
 spec:
   params:
-    - name: commits
-      description: The commits which got pushed
     - name: repo-url
       description: The git repository that hosts context
   resourcetemplates:
@@ -33,8 +31,6 @@ spec:
                 requests:
                   storage: 1Gi
         params:
-        - name: commits
-          value: "$(tt.params.commits)"
         - name: repo-url
           value: "$(tt.params.repo-url)"
         - name: image-reference
