@@ -8,7 +8,7 @@ spec:
   params:
     - name: commits
       description: The commits which got pushed
-    - name: gitRepository
+    - name: repo-url
       description: The git repository that hosts context
   resourcetemplates:
     - apiVersion: tekton.dev/v1
@@ -35,7 +35,7 @@ spec:
         params:
         - name: commits
           value: "$(tt.params.commits)"
-        - name: gitRepository
-          value: "$(tt.params.gitRepository)"
+        - name: repo-url
+          value: "$(tt.params.repo-url)"
         - name: image-reference
           value: docker.io/surajmohanm/webapp-tekton
