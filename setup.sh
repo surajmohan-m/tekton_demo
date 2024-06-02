@@ -47,6 +47,9 @@ kubectl apply -f trigger_binding.yml
 #Create trigger
 kubectl apply -f trigger.yml
 
+#Create service account with required trigger roles
+kubectl apply -f rbac.yml
+
 #Create event listner
 kubectl apply -f event_listner.yml
 
