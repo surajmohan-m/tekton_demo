@@ -4,5 +4,5 @@ metadata:
   name: github-binding
 spec:
   params:
-    - name: gitRepository
+    - name: repo-url
       value: $(body.repository.html_url)
