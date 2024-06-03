@@ -17,7 +17,7 @@ spec:
         name: "cel"
       params:
         - name: "filter"
-          value: body.ref == 'refs/heads/trigger-config'
+          value: body.ref == 'refs/heads/main'
     
   bindings:
     - ref: github-binding
