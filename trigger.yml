@@ -13,11 +13,7 @@ spec:
             secretKey: secret
         - name: "eventTypes"
           value: ["push"]
-    - ref:
-        name: "cel"
-      params:
-        - name: "filter"
-          value: body.ref == 'refs/heads/trigger-config'
+    
   bindings:
     - ref: github-binding
   template:
