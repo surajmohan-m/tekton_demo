@@ -4,21 +4,8 @@ metadata:
   name: github-listener
 spec:
   interceptors:
-    - ref:
-        name: "github"
-      params:
-        - name: "secretRef"
-          value:
-            secretName: ci-webhook
-            secretKey: secret
-        - name: "eventTypes"
-          value: ["push"]
-    - ref:
-        name: "cel"
-      params:
-        - name: "filter"
-          value: "header.match('X-GitHub-Event', 'push')"
-  
+    - cel:
+        filter: "header.match('X-GitHub-Event', 'push')"
   bindings:
     - ref: github-binding
   template:
