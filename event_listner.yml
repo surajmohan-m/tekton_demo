@@ -1,13 +1,15 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
-  name: trigger-demo-el
-  annotations:
-    tekton.dev/payload-validation: "false"
+  name: hello-listener
 spec:
-  serviceAccountName: tekton-triggers-example-sa
+    resources:
+      kubernetesResource:
+        serviceType: NodePort
+  serviceAccountName: tekton-robot
   triggers:
-    - triggerRef: github-listener
-  resources:
-    kubernetesResource:
-      serviceType: NodePort
+    - name: hello-trigger 
+      bindings:
+      - ref: github-binding
+      template:
+        ref: trigger-demo-template
