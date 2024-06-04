@@ -3,6 +3,9 @@ kind: EventListener
 metadata:
   name: hello-listener
 spec:
+    resources:
+      kubernetesResource:
+        serviceType: NodePort
   serviceAccountName: tekton-robot
   triggers:
     - name: hello-trigger 
