@@ -17,8 +17,8 @@ spec:
         name: "cel"
       params:
         - name: "filter"
-          value: body.ref == 'refs/heads/main'
-    
+          value: "header.match('X-GitHub-Event', 'push')"
+  
   bindings:
     - ref: github-binding
   template:
