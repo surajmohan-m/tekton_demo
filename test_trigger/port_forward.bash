@@ -1,0 +1,1 @@
+kubectl port-forward service/el-hello-listener 8080
