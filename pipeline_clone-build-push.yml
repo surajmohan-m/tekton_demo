@@ -9,6 +9,8 @@ spec:
   params:
   - name: repo-url
     type: string
+  - name: revision
+    type: string 
   - name: image-reference
     type: string
   workspaces:
