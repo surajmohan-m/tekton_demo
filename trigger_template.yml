@@ -33,5 +33,7 @@ spec:
         params:
         - name: repo-url
           value: "$(tt.params.repo-url)"
+        - name: repo-url
+          value: "$(tt.params.revision)"  
         - name: image-reference
           value: docker.io/surajmohanm/webapp-tekton
