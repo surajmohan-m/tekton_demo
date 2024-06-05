@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: repo-url
-      value: $(body.head_commit.url)
+      value: $(body.repository.clone_url)
