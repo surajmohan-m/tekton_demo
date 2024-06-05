@@ -8,6 +8,8 @@ spec:
   params:
     - name: repo-url
       description: The git repository that hosts context
+    - name: revision
+      description: The git repository that hosts context  
   resourcetemplates:
     - apiVersion: tekton.dev/v1
       kind: PipelineRun
@@ -33,7 +35,7 @@ spec:
         params:
         - name: repo-url
           value: "$(tt.params.repo-url)"
-        - name: repo-url
+        - name: revision
           value: "$(tt.params.revision)"  
         - name: image-reference
           value: docker.io/surajmohanm/webapp-tekton
