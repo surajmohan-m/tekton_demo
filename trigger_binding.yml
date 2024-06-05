@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: repo-url
-      value: $(body.repository.html_url)
+      value: $(body.html_url)
