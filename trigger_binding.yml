@@ -6,3 +6,5 @@ spec:
   params:
     - name: repo-url
       value: $(body.repository.html_url)
+    - name: revision
+      value: $(body.head_commit.id)
