@@ -9,8 +9,6 @@ spec:
   params:
   - name: repo-url
     type: string
-  - name: revision
-    type: string 
   - name: image-reference
     type: string
   workspaces:
@@ -26,8 +24,6 @@ spec:
     params:
     - name: url
       value: $(params.repo-url)
-    - name: revision
-      value: $(params.revision) 
   - name: build-push
     runAfter: ["fetch-source"]
     taskRef:
