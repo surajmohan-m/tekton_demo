@@ -38,4 +38,4 @@ spec:
         - name: revision
           value: "$(tt.params.revision)"  
         - name: image-reference
-          value: docker.io/surajmohanm/webapp-tekton:V2
+          value: docker.io/surajmohanm/webapp-tekton
