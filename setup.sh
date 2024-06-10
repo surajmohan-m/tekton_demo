@@ -11,6 +11,9 @@ dpkg -i tektoncd-cli-0.36.0_Linux-64bit.deb
 
 #rpm -i  https://github.com/tektoncd/cli/releases/download/v0.36.0/tektoncd-cli-0.36.0_Linux-64bit.rpm
 
+#setup local reg
+docker run -d -p 5000:5000 --name registry registry:2.7
+
 #Install git clone from hub
 kubectl apply -f  git-clone.yml
 
