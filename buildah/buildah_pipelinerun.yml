@@ -6,9 +6,6 @@ spec:
   serviceAccountName: dockerhub-service-account
   pipelineRef:
     name: tekton-pipeline 
-  podTemplate:
-    securityContext:
-      fsGroup: 65532 
   params:
   - name: repo-url
     value: https://github.com/surajmohan-m/webapp
