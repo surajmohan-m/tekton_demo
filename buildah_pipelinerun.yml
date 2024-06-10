@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: tekton-pipelinerun-
+  namespace: git-clone
+spec:
+  serviceAccountName: dockerhub-service-account
+  pipelineRef:
+    name: tekton-pipeline 
+  podTemplate:
+    securityContext:
+      fsGroup: 65532 
+  params:
+  - name: repo-url
+    value: https://github.com/surajmohan-m/webapp
+  - name: image-reference
+    value: docker.io/surajmohanm/webapp-tekton
+  - name: image-tag
+    value: latest
+  workspaces:
+    - name: tekton-workspace 
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
