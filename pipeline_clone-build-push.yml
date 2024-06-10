@@ -35,4 +35,4 @@ spec:
       workspace: docker-credentials
     params:
     - name: IMAGE
-      value: $(params.image-reference):$(tasks.fetch-source.results.commit)
+      value: $(params.image-reference)
