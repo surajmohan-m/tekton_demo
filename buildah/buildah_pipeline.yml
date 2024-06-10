@@ -37,7 +37,5 @@ spec:
       params:
         - name: IMAGE
           value: $(params.image-reference):$(tasks.fetch-repository.results.commit)
-        - name: CONTEXT
-          value: "app" 
         - name: FORMAT
           value: "docker"
