@@ -2,7 +2,6 @@ apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   generateName: tekton-pipelinerun-
-  namespace: git-clone
 spec:
   serviceAccountName: dockerhub-service-account
   pipelineRef:
