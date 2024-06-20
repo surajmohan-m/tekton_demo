@@ -18,56 +18,46 @@ dpkg -i tektoncd-cli-0.36.0_Linux-64bit.deb
 #rpm -i  https://github.com/tektoncd/cli/releases/download/v0.36.0/tektoncd-cli-0.36.0_Linux-64bit.rpm
 
 #Install git clone from hub
-kubectl apply -f  git-clone.yml
+kubectl apply -f  Tasks/git-clone.yml
 
 #Install kaniko from hub
-kubectl apply -f  kaniko.yml
+kubectl apply -f  Tasks/kaniko.yml
 
-#install task source list
-#kubectl apply -f task_source_list.yml
-
-#install pipeline
-#kubectl apply -f pipeline.yml
-
-#create pipeline run
-#kubectl create -f pipeline_Run.yml
 
 #create docker credentials
-kubectl apply -f docker-credentials.yml
+kubectl apply -f auth/docker-credentials.yml
 
 #create pipeline
-kubectl apply -f pipeline_clone-build-push.yml
+kubectl apply -f Pipeline/pipeline_clone-build-push.yml
 
 #create pipelinerun
-#kubectl create -f pipelinerun-clone-build-push.yml
+#kubectl create -f Pipelinerun/pipelinerun-clone-build-push.yml
 
 #Create tekton webhook token
-kubectl apply -f webhook_secret.yml
+kubectl apply -f auth/webhook_secret.yml
 
 #Create trigger template
-kubectl apply -f trigger_template.yml
+kubectl apply -f Triggers/trigger_template.yml
 
 #Create trigger binding
-kubectl apply -f trigger_binding.yml
+kubectl apply -f Triggers/trigger_binding.yml
 
 #Create trigger
-kubectl apply -f trigger.yml
+#kubectl apply -f trigger.yml
 
 #Create service account with required trigger roles
-kubectl apply -f rbac.yml
+kubectl apply -f auth/rbac.yml
 
 #Create event listner
-kubectl apply -f event_listner.yml
+kubectl apply -f Triggers/event_listner.yml
 
-#Create event listner ingress
-kubectl apply -f trigger_ingress.yml
 ################################
 ## Create deployment and service
 ################################
 
 
 #create deployment of webapp
-kubectl apply -f deployment_webapp.yml
+kubectl apply -f webapp/deployment_webapp.yml
 
 #rollout new image
 kubectl rollout  restart deployment webapp-deployment
