@@ -1,7 +1,7 @@
 apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
-  name: hello-listener
+  name: webapp-listener
 spec:
   resources:
     kubernetesResource:
