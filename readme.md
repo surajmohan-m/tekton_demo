@@ -23,7 +23,7 @@ To install Tekton on your Kubernetes cluster, follow these steps:
 
 ![Test Image 3](tekton_demo_overview.png)
 
-## Tekton Pipeline Architecture
+## Tekton Pipeline Usecase Architecture
 
 ![Test Image 4](tekton_demo_pipeline_structure.png)
 
