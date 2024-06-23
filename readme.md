@@ -19,7 +19,11 @@ To install Tekton on your Kubernetes cluster, follow these steps:
 
    ```bash
    kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+## Overview of Tekton Usecase
 
 ![Test Image 3](tekton_demo_overview.png)
+
+## Tekton Pipeline Architecture
+
 ![Test Image 4](tekton_demo_pipeline_structure.png)
 
