@@ -64,7 +64,7 @@ kubectl apply -f Pipeline/pipeline_clone-build-push.yml
 #####
 ########################################################################################################################
 #Create tekton webhook token
-kubectl apply -f auth/webhook_secret.yml
+#kubectl apply -f auth/webhook_secret.yml
 
 #Create trigger template
 kubectl apply -f Triggers/trigger_template.yml
