@@ -21,18 +21,13 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 
 ## Tekton - Build and push Pipeline
 
-
 ![](assets/20240627_002021_tekton_demo_pipeline_structure_3.png)
 
 
-**Pipeline** - clone_build_push
-
-* **tasks**
-
-  * fetch-source
-    * reference task - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
-  * build-push
-    * reference task - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
-* **Pipelinerun**
+* **Pipelinerun** - clone_build_push-*
 
   * **Pipeline** - clone_build_push
+    * **Taskrun** - fetch-source
+      * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
+    * **Taskrun** - build-push
+      * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
