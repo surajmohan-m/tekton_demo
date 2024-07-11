@@ -13,7 +13,7 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 * **Deployment**
 
   * Name : webapp-deployment
-  * image : [webapp-tekton]([https://hub.docker.com/r/surajmohanm/webapp-tekton/tags])
+  * image : [webapp-tekton](https://hub.docker.com/r/surajmohanm/webapp-tekton/tags)
   * Port : 80
 * Service
 
