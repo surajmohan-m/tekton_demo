@@ -54,7 +54,7 @@ curl -LO https://github.com/tektoncd/cli/releases/download/v0.36.0/tektoncd-cli-
 dpkg -i tektoncd-cli-0.36.0_Linux-64bit.deb
 ```
 #### Install Tasks, Pipeline and docker credentials 
-````
+
 ```
 #Install git clone from hub
 kubectl apply -f  Tasks/git-clone.yml
@@ -69,7 +69,6 @@ kubectl apply -f auth/docker-credentials.yml
 #create pipeline
 kubectl apply -f Pipeline/pipeline_clone-build-push.yml
 ```
-````
 
 #### Install Tekton Triggers
 ```
