@@ -21,14 +21,12 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 
 ### Setup using Install script
 A simple installation script is available in this repo which installs all the required resources required for Tekton pipelines in the K8S Cluster.
-```
-```
+``````
 git clone https://github.com/surajmohan-m/tekton_demo.git
 cd tekton_demo
 chmod 755 setup.sh
 ./setup.sh
-```
-```
+``````
 ### Details of the installation
 #### Install deployment and service for the Webapp
 
