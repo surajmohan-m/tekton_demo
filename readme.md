@@ -1,3 +1,5 @@
+
+
 ## Overview of Tekton Usecase
 
 ![Test Image 3](tekton_demo_overview.png)
@@ -89,9 +91,15 @@ kubectl apply -f Triggers/event_listner.yml
 ```
 
 #### Update the webhook in Git repo
+Get the event listener port in the node
+```
+kubectl get svc el-webapp-listener
+```
+![test](event_listener_port.png)
 
+Then **http://<Node IP>:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
 
-##### Webapp CI/CD Pipeline Architecture
+#### Webapp CI/CD Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
 
@@ -107,7 +115,7 @@ kubectl apply -f Triggers/event_listner.yml
 
 ## Reusing the pipeline
 
-### Update the Yaml files
+#### This Tekton pipeline can be reused by updateing the Yaml files as follows
 * Modify  **image** in **webapp/deployment_webapp.yml**
   ```
    containers:
