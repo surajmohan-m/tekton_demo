@@ -30,7 +30,7 @@ chmod 755 setup.sh
 ./setup.sh
 ```
 
-### Manuall installation
+### Details of the installation
 #### Install deployment and service for the Webapp
 
 ```
@@ -51,7 +51,6 @@ kubectl apply -f https://storage.googleapis.com/tekton-releases/triggers/latest/
 
 #install dashboard
 kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
-#kubectl --namespace tekton-pipelines port-forward svc/tekton-dashboard 9097:9097 --address 0.0.0.0 &
 
 #Install tkn CLI
 curl -LO https://github.com/tektoncd/cli/releases/download/v0.36.0/tektoncd-cli-0.36.0_Linux-64bit.deb
