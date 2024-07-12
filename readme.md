@@ -19,7 +19,7 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 
   * kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
 
-## Tekton - Build and push Pipeline
+## Tekton - Build and push Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
 
