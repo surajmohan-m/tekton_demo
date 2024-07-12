@@ -19,7 +19,8 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 
   * kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
 
-## Tekton - Build and push Pipeline Architecture
+## CI/CD for the Webapp using Tekton
+### Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
 
@@ -31,3 +32,13 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
       * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
     * **Taskrun** - build-push
       * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
+
+### Setup
+A simple installation script is available in this repo which installs all the required resources required for Tekton pipelines in the K8S Cluster.
+```
+git clone https://github.com/surajmohan-m/tekton_demo.git
+cd tekton_demo
+chmod 755 setup.sh
+./setup.sh
+```
+
