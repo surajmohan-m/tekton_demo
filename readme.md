@@ -48,7 +48,7 @@ we will analyze the important points of each installation step in detail.
 
 ```
 #create deployment of webapp
-kubectl apply -f [webapp/deployment_webapp.yml](https://github.com/surajmohan-m/tekton_demo/blob/main/webapp/deployment_webapp.yml)
+kubectl apply -f webapp/deployment_webapp.yml
 
 #k8s webapp service
 kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
