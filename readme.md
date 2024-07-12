@@ -104,4 +104,19 @@ kubectl apply -f Triggers/event_listner.yml
 ## Reusing the pipeline
 
 ### Update the Yaml files
-* Update   **name** , **image**, **labels**  and **containerPort** in 
+* Modify   **name** , **image**, **labels**  and **containerPort** in **webapp/deployment_webapp.yml**
+* Modify
+  ```
+   - Pipeline name
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: **clone-build-push**
+  ```
+  - Task names
+  ```
+     tasks:
+  - name: fetch-source
+  - name: build-push
+  ```
+  
