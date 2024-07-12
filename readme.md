@@ -74,25 +74,9 @@ kubectl apply -f auth/docker-credentials.yml
 #create pipeline
 kubectl apply -f Pipeline/pipeline_clone-build-push.yml
 ```
-##### Pipeline Architecture
 
-![](assets/tekton_demo_pipeline_structure_4.png)
-
-
-* **Pipelinerun** - clone_build_push-*
-
-  * **Pipeline** - clone_build_push
-    * **Taskrun** - fetch-source
-      * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
-    * **Taskrun** - build-push
-      * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
-
-#### Install Triggers
-
-##### Trigger flow
-![](TriggerFlow.svg)
-
-
+#### Install Tekton Triggers
+```
 #Create trigger template
 kubectl apply -f Triggers/trigger_template.yml
 
@@ -107,4 +91,19 @@ kubectl apply -f auth/rbac.yml
 
 #Create event listner
 kubectl apply -f Triggers/event_listner.yml
+```
+##### Webapp CI/CD Pipeline Architecture
+
+![](assets/tekton_demo_pipeline_structure_4.png)
+
+
+* **Pipelinerun** - clone_build_push-*
+
+  * **Pipeline** - clone_build_push
+    * **Taskrun** - fetch-source
+      * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
+    * **Taskrun** - build-push
+      * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
+
+
 
