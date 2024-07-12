@@ -21,12 +21,12 @@ The Webapp git repo contains a simple ***html file*** and a ***Dockerfile*** to 
 
 ### Setup using Install script
 A simple installation script is available in this repo which installs all the required resources required for Tekton pipelines in the K8S Cluster.
-``````
+```
 git clone https://github.com/surajmohan-m/tekton_demo.git
 cd tekton_demo
 chmod 755 setup.sh
 ./setup.sh
-``````
+```
 ### Details of the installation
 #### Install deployment and service for the Webapp
 
@@ -54,7 +54,7 @@ curl -LO https://github.com/tektoncd/cli/releases/download/v0.36.0/tektoncd-cli-
 dpkg -i tektoncd-cli-0.36.0_Linux-64bit.deb
 ```
 #### Install Tasks, Pipeline and docker credentials 
-
+````
 ```
 #Install git clone from hub
 kubectl apply -f  Tasks/git-clone.yml
@@ -69,6 +69,7 @@ kubectl apply -f auth/docker-credentials.yml
 #create pipeline
 kubectl apply -f Pipeline/pipeline_clone-build-push.yml
 ```
+````
 
 #### Install Tekton Triggers
 ```
@@ -101,4 +102,7 @@ kubectl apply -f Triggers/event_listner.yml
       * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
 
 
+## Reusing the pipeline
 
+### Update the Yaml files
+* Update   **name** , **image**, **labels**  and **containerPort** in 
