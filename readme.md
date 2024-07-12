@@ -87,6 +87,10 @@ kubectl apply -f auth/rbac.yml
 #Create event listner
 kubectl apply -f Triggers/event_listner.yml
 ```
+
+#### Update the webhook in Git repo
+
+
 ##### Webapp CI/CD Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
@@ -104,19 +108,15 @@ kubectl apply -f Triggers/event_listner.yml
 ## Reusing the pipeline
 
 ### Update the Yaml files
-* Modify   **name** , **image**, **labels**  and **containerPort** in **webapp/deployment_webapp.yml**
-* Modify
+* Modify  **image** in **webapp/deployment_webapp.yml**
   ```
-   - Pipeline name
-apiVersion: tekton.dev/v1
-kind: Pipeline
-metadata:
-  name: **clone-build-push**
+   containers:
+      - name: nginx
+        image: docker.io/surajmohanm/webapp-tekton:latest
   ```
-  - Task names
-  ```
-     tasks:
-  - name: fetch-source
-  - name: build-push
-  ```
+* Modify **image-reference** in **Triggers/trigger_template.yml**
+   ```
+   name: image-reference
+          value: surajmohanm/webapp-tekton
+   ```
   
