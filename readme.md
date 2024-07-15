@@ -127,4 +127,4 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
    name: image-reference
           value: surajmohanm/webapp-tekton
    ```
-  
+  More meaningful names and labels can be given to the resources according to the requirement.
