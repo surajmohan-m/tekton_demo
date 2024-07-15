@@ -97,7 +97,7 @@ kubectl get svc el-webapp-listener
 ```
 ![test](event_listener_port.png)
 
-Then **http://<Node IP>:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
+Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
 
 #### Webapp CI/CD Pipeline Architecture
 
