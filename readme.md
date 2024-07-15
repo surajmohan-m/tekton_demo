@@ -4,7 +4,7 @@
 
 ![Test Image 3](tekton_demo_overview.png)
 
-## Webapp Application
+## Sample Webapp Application
 
 ### Webapp Git Repo
 
