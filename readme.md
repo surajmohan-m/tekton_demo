@@ -29,7 +29,7 @@ cd tekton_demo
 chmod 755 setup.sh
 ./setup.sh
 ```
-### Details of the installation
+### Installation steps
 #### Install deployment and service for the Webapp
 
 ```
