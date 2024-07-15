@@ -141,10 +141,10 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
   * Update **config.json** field in **auth/docker-credentials.yml**
   ```
   apiVersion: v1
-kind: Secret
-metadata:
-  name: docker-credentials
-data:
-  config.json:[use your encoded config.json here]
+  kind: Secret
+  metadata:
+    name: docker-credentials
+  data:
+    config.json:[use your encoded config.json here]
   ```
   More meaningful names and labels can be given to the resources according to the requirement.
