@@ -160,22 +160,22 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
    ```
 * Modify **config.json** in **auth/docker-credentials.yml**
   * Create docker config file by login to docker using following command. Provide username and password when prompted
-  ```
-  docker login
-  ```
+    ```
+    docker login
+    ```
   * Create encoded config.json string
     ```
     cat .docker/config.json |base64
     ```
   * Update **config.json** field in **auth/docker-credentials.yml**
-  ```
-  apiVersion: v1
-  kind: Secret
-  metadata:
-    name: docker-credentials
-  data:
-    config.json:[use your encoded config.json here]
-  ```
+    ```
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: docker-credentials
+    data:
+      config.json:[use your encoded config.json here]
+    ```
  * **Ingress** configuration for the **webhook**
    
    Need to implement ingress for **event listener** to configure webhook path
