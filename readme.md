@@ -105,8 +105,44 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
 
 
 * **Pipelinerun** - clone_build_push-*
-
+    ```
+     resourcetemplates:
+     - apiVersion: tekton.dev/v1
+       kind: PipelineRun
+       .......
+       .......
+       spec:
+        pipelineRef:
+          name: clone-build-push
+        .......
+        .......
+        params:
+        - name: repo-url
+          value: "$(tt.params.repo-url)"
+        - name: image-reference
+          value: surajmohanm/webapp-tekton
+    ```
   * **Pipeline** - clone_build_push
+    ```
+     params:
+     - name: repo-url
+       type: string
+     - name: image-reference
+       type: string
+       .......
+       .......
+       tasks:
+       - name: fetch-source
+         taskRef:
+           name: git-clone
+        .......
+        .......
+      - name: build-push
+        runAfter: ["fetch-source"]
+        taskRef:
+          name: kaniko
+         
+    ```
     * **Taskrun** - fetch-source
       * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
     * **Taskrun** - build-push
