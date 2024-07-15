@@ -148,6 +148,7 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
     config.json:[use your encoded config.json here]
   ```
  * **Ingress** configuration for the **webhook**
+   
    Need to implement ingress for **event listener** to configure webhook path
 
   More meaningful names and labels can be given to the resources according to the requirement.
