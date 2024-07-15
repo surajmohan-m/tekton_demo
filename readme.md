@@ -112,6 +112,8 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
     * **Taskrun** - build-push
       * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
 
+### Internals of the YAML files
+
 
 ## Reusing the pipeline
 
@@ -127,4 +129,22 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
    name: image-reference
           value: surajmohanm/webapp-tekton
    ```
+* Modify **config.json** in **auth/docker-credentials.yml**
+  * Create docker config file by login to docker using following command. Provide username and password when prompted
+  ```
+  docker login
+  ```
+  * Create encoded config.json string
+    ```
+    cat .docker/config.json |base64
+    ```
+  * Update **config.json** field in **auth/docker-credentials.yml**
+  ```
+  apiVersion: v1
+kind: Secret
+metadata:
+  name: docker-credentials
+data:
+  config.json:[use your encoded config.json here]
+  ```
   More meaningful names and labels can be given to the resources according to the requirement.
