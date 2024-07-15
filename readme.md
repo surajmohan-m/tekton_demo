@@ -146,7 +146,7 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
 
 ## Reusing the pipeline
 
-#### This Tekton pipeline can be reused by updateing the Yaml files as follows
+#### This Tekton pipeline can be reused by updating the Yaml files as follows
 * Modify  **image** in **webapp/deployment_webapp.yml**
   ```
    containers:
