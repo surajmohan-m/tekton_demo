@@ -90,7 +90,7 @@ kubectl apply -f auth/rbac.yml
 kubectl apply -f Triggers/event_listner.yml
 ```
 
-#### Update the webhook in Git repo
+#### Test the webhook in Git repo
 Get the event listener port in the node
 ```
 kubectl get svc el-webapp-listener
@@ -147,4 +147,7 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
   data:
     config.json:[use your encoded config.json here]
   ```
+ * Ingress configuration for the webhook
+   Need to implement ingress for event viewer to configure webhook path
+
   More meaningful names and labels can be given to the resources according to the requirement.
