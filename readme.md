@@ -148,8 +148,6 @@ Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at *
     * **Taskrun** - build-push
       * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
 
-### Internals of the YAML files
-
 
 ## Reusing the pipeline
 
