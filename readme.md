@@ -97,8 +97,8 @@ kubectl get svc el-webapp-listener
 ```
 ![test](event_listener_port.png)
 
-Then **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
-
+ **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
+Then perform push operation and monitor the event listener log
 #### Webapp CI/CD Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
