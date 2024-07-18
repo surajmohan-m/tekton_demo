@@ -2,7 +2,7 @@
 
 ## Overview of Tekton Usecase
 
-![Test Image 3](tekton_demo_overview.png)
+![Test Image 3](tekton_demo_overview_1.png)
 
 ## Sample Webapp Application
 
