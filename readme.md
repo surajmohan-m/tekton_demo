@@ -105,7 +105,7 @@ Then perform push operation and monitor the event listener log
 ![](assets/tekton_demo_pipeline_structure_4.png)
 
 
-* **Pipelinerun** - clone_build_push-*
+*  **Internals of Pipelinerun** - clone_build_push-*
     ```
      apiVersion: tekton.dev/v1
       kind: PipelineRun
@@ -124,8 +124,9 @@ Then perform push operation and monitor the event listener log
         - name: image-reference
           value: surajmohanm/webapp-tekton
     ```
-  * **Pipeline** - clone_build_push
-    ```
+  *  **Internals Internals of Pipeline** - clone_build_push
+
+ ```
      params:
      - name: repo-url
        type: string
@@ -143,12 +144,11 @@ Then perform push operation and monitor the event listener log
         runAfter: ["fetch-source"]
         taskRef:
           name: kaniko
-         
-    ```
-    * **Taskrun** - fetch-source
-      * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
-    * **Taskrun** - build-push
-      * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
+ ```
+ * **Taskrun** - fetch-source
+    * **Task** - [git-clone](https://hub.tekton.dev/tekton/task/git-clone)
+  * **Taskrun** - build-push
+    * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
 
 
 ## Reusing the pipeline
