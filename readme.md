@@ -30,6 +30,7 @@ chmod 755 setup.sh
 ./setup.sh
 ```
 ### Installation steps
+Now we will analyze intallation steps and the custom resources (CRD) involved in Tekton pipeline
 #### Install deployment and service for the Webapp
 
 ```
