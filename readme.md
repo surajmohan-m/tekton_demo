@@ -106,7 +106,13 @@ Then perform push operation and monitor the event listener log
 
 * **Pipelinerun** - clone_build_push-*
     ```
-       spec:
+     apiVersion: tekton.dev/v1
+      kind: PipelineRun
+      metadata:
+        generateName: clone-build-push-run-
+        .......
+        .......
+      spec:
         pipelineRef:
           name: clone-build-push
         .......
