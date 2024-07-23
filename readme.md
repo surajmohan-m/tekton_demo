@@ -1,8 +1,8 @@
 
 
-## Overview of Tekton Usecase
+## Overview of Tekton pipeline for Webapp CI/CD
 
-![Test Image 3](tekton_demo_overview_1.png)
+![Test Image 3](tekton_demo_overview_2.png)
 
 ## Sample Webapp Application
 
@@ -31,16 +31,7 @@ chmod 755 setup.sh
 ```
 Details of the installation steps is described ![here](Install.md)
 
-#### Test the webhook in Git repo
-Get the event listener port in the node
-```
-kubectl get svc el-webapp-listener
-```
-![test](event_listener_port.png)
-
- **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
-Then perform push operation and monitor the event listener log
-#### Webapp CI/CD Pipeline Architecture
+### Webapp CI/CD Pipeline Architecture
 
 ![](assets/tekton_demo_pipeline_structure_4.png)
 
@@ -90,7 +81,23 @@ Then perform push operation and monitor the event listener log
   * **Taskrun** - build-push
     * **Task** - [kaniko](https://hub.tekton.dev/tekton/task/kaniko)
 
+### Verify the pipeline
+#### Trigger the pipeline using pipelinerun
+Create the Pipelinerun using the below command 
+```
+kubectl create -f Pipelinerun/pipelinerun-clone-build-push.yml
+```
+and verify the logs using below commands
 
+#### Test the webhook in Git repo
+Get the event listener port in the node
+```
+kubectl get svc el-webapp-listener
+```
+![test](event_listener_port.png)
+
+ **http://[Node IP]:PORT** is the webhook URL. Update it in Github Repo at **Settings >> Webhooks >>  Payload URL**
+Then perform push operation and monitor the event listener log
 ## Reusing the pipeline
 
 #### This Tekton pipeline can be reused by updating the Yaml files as follows
