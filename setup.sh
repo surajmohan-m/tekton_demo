@@ -5,7 +5,7 @@
 ########################################################################################################################
 
 #create deployment of webapp
-kubectl apply -f webapp/deployment_webapp.yml
+kubectl apply -f webapp/deployment.yml
 
 #rollout new image
 #kubectl rollout  restart deployment webapp-deployment
