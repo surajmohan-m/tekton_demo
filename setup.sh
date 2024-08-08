@@ -11,7 +11,7 @@ kubectl apply -f webapp/deployment.yml
 #kubectl rollout  restart deployment webapp-deployment
 
 #k8s webapp service
-kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
+#kubectl expose deployment/webapp-deployment --type="NodePort" --port 80
 
 ########################################################################################################################
 #####
